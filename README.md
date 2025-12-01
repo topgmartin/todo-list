@@ -1,8 +1,11 @@
-Requirements:
-node.js - last stable
-npm - last stable
-ionic/cli globally available
+Requirements(all must be available in cli):
+node.js - latest stable
+npm - latest stable
+ionic/cli - latest stable
 
-Instructions:
-1, npm i
-2. ionic serve
+
+Instructions to run:
+1. Clone or download repository
+2. run npm install in project directory
+3. run ionic serve in project directory
+4. view server in supported browser
