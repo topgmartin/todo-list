@@ -1,7 +1,7 @@
 # Requirements(all must be available in cli):
-node.js - latest stable
-npm - latest stable
-ionic/cli - latest stable
+* node.js - latest stable
+* npm - latest stable
+* ionic/cli - latest stable
 
 
 # Instructions to run:
