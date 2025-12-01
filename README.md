@@ -1,10 +1,10 @@
-Requirements(all must be available in cli):
+# Requirements(all must be available in cli):
 node.js - latest stable
 npm - latest stable
 ionic/cli - latest stable
 
 
-Instructions to run:
+# Instructions to run:
 1. Clone or download repository
 2. run npm install in project directory
 3. run ionic serve in project directory
