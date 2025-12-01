@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="gel-orange">
+    <ion-buttons>
+      <ion-menu-button slot="start"></ion-menu-button>
+      <ion-title>Settings</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="gel-dark">
+  <!-- Přidávání kategorií -->
+
+  <ion-card>
+    <ion-card-header color="gel-light">
+      <ion-card-title>Add Category</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form #categoryForm="ngForm" (ngSubmit)="add(categoryForm.value)">
+        <ion-grid class="ion-padding-top">
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="number"
+                label="Category ID"
+                labelPlacement="floating"
+                fill="outline"
+                name="id"
+                [(ngModel)]="propId"
+                readonly
+                [value]="propId">
+              </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                label="Name"
+                labelPlacement="floating"
+                fill="outline"
+                name="name"
+                ngModel
+                maxlength="20"
+                #title
+                (keyup)="check(title.value)"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button
+                color="gel-orange"
+                expand="block"
+                size="large"
+                type="submit"
+                [disabled]="propDisabled">
+                <ion-icon name="save" slot="start">
+                </ion-icon>
+                Save
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <!-- Zobrazování listů kategorií -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>List of Categories</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <div
+          *ngIf="(objectCategories === null || categories === '[]'); then ifBlock else elseBlock"
+        ></div>
+        <ng-template #ifBlock>
+          <ion-item>
+            <ion-text color="gel-light">Empty....</ion-text>
+          </ion-item>
+        </ng-template>
+        <ng-template #elseBlock>
+          <ion-item *ngFor="let category of objectCategories; index as indexID">
+            <ion-icon
+              slot="end"
+              name="trash" c
+              olor="gel-orange"
+              [id]="indexID">
+            </ion-icon>
+            {{ category.name }}
+            <ion-alert
+              [trigger]="indexID"
+              header="Are you sure?"
+              message="It will remove all ToDo item(s) under this category"
+              [buttons]="propButtonDelete"
+              (didDismiss)="setResult($event, indexID, category.name)"
+            >
+            </ion-alert>
+          </ion-item>
+        </ng-template>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

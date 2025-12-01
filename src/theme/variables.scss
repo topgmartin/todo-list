@@ -1,0 +1,52 @@
+// For information on how to create your own theme, please refer to:
+// https://ionicframework.com/docs/theming/
+:root {
+  * {
+    font-family: "Nunito", sans-serif !important;
+  }
+
+  --ion-color-gel-orange: #eb5b28;
+  --ion-color-gel-orange-rgb: 235, 91, 40;
+  --ion-color-gel-orange-contrast: #000000;
+  --ion-color-gel-orange-contrast-rgb: 0, 0, 0;
+  --ion-color-gel-orange-shade: #cf5023;
+  --ion-color-gel-orange-tint: #ed6b3e;
+
+
+  ion-toolbar {
+    --min-height: 60px;
+  }
+
+  ion-input,
+  ion-textarea,
+  ion-select {
+    --highlight-color-focused: var(--ion-color-gel-orange);
+    --highlight-color-valid: var(--ion-color-gel-orange);
+    --border-radius: 10px !important;
+  }
+
+
+  ion-header,
+  ion-footer,
+  ion-button {
+    box-shadow: none !important;
+  }
+
+  ion-button {
+    --box-shadow: none;
+  }
+
+  ion-card {
+    margin-top: 20px;
+  }
+}
+
+.ion-color-gel-orange {
+  --ion-color-base: var(--ion-color-gel-orange);
+  --ion-color-base-rgb: var(--ion-color-gel-orange-rgb);
+  --ion-color-contrast: var(--ion-color-gel-orange-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-gel-orange-contrast-rgb);
+  --ion-color-shade: var(--ion-color-gel-orange-shade);
+  --ion-color-tint: var(--ion-color-gel-orange-tint);
+}
+
